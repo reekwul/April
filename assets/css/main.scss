@@ -1,0 +1,142 @@
+@import "../variables.scss";
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: $CBlackBlue;
+  background-image: linear-gradient(rgba(32, 0, 80, 0), $CBlackBlue 75%),
+  url("/img.png");
+  background-size: auto 45vw, contain;
+  background-repeat: no-repeat;
+}
+
+#wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: $l;
+  flex: 1;
+}
+
+.head-name {
+  margin: $margin-24-0;
+  padding: $padding-24-0;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: $FShead-name;
+
+
+  text-transform: uppercase;
+
+  background: linear-gradient(268.55deg, #EBC1FF 0%, #E0D8FF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 8px 16px rgba(16, 0, 37, 0.15);
+}
+
+
+.Table-Wrapper {
+  margin: $margin-24-0;
+  border-radius: $border-radius;
+  max-width: $l;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: $table-font;
+  line-height: $table-font-l;
+  color: $CTable-Wrapper;
+}
+
+.Table-Header {
+  display: grid;
+
+  padding: $padding-0-20;
+  background: $CLiteBlue;
+  border-radius: $br-12-12-0-0;
+  border-left: 2px solid $CLiteBlue;
+  border-right: 2px solid $CLiteBlue;
+
+  text-transform: uppercase;
+}
+
+.column {
+  display: flex;
+  margin: $margin;
+  padding: $padding;
+}
+
+.Item-Wrapper {
+  display: grid !important;
+
+  padding: $padding-0-20;
+  border-left: 2px solid $CLiteBlue;
+  border-right: 2px solid $CLiteBlue;
+  border-bottom: 1px solid $CLiteBlue;
+  border-top: 1px solid $CLiteBlue;
+  transition: all $TAnimation ease;
+}
+
+.Item-Wrapper:hover {
+  background: $CItem-Wrapper-hover;
+}
+
+.Item-Wrapper-2n {
+  background: rgba(16, 0, 37, 0.25);
+}
+
+.item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 0.5fr;
+
+  margin: $margin;
+  padding: $padding;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: $table-font;
+  line-height: $table-font-l;
+
+  color: $CItem;
+}
+
+.icon {
+  justify-self: center;
+  height: 50px;
+
+  margin: $margin-0-4 ;
+  padding: $pudding-0-4 ;
+}
+
+.team {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: $FSteam;
+  line-height: 29px;
+}
+
+.btn {
+  margin: $margin-24;
+  padding: $padding-24;
+  display: flex;
+  justify-content: center;
+}
