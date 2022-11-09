@@ -2,12 +2,12 @@
 <input class="check" type="checkbox" v-model="flag" @change="()=>this.$emit('change',this.flag)">
 </template>
 
-<script>
-import Vue from "vue";
-export default Vue.extend({
+<script lang="ts">
+import {defineComponent} from "vue";
+export default defineComponent({
   name: "CheckboxUI",
   data:()=>({
-    flag:true
+    flag:false
   })
 })
 </script>

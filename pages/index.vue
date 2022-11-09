@@ -53,9 +53,9 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import UIProgressbar from "@/components/UI/UIProgressbar";
-import UIBtn from "@/components/UI/UIBtn";
+import {defineComponent} from 'vue'
+import UIProgressbar from "../components/UI/UIProgressbar";
+import UIBtn from "../components/UI/UIBtn";
 import {ITeam} from "~/types/CommandState";
 import SearchUI from "~/components/UI/SearchUI.vue";
 import CheckboxUI from "~/components/UI/CheckboxUI.vue";
@@ -76,7 +76,7 @@ interface IFilter {
   maxLength:number
 }
 
-export default Vue.extend({
+export default defineComponent({
   name: 'IndexPage',
   components: {CheckboxUI, SearchUI, UIBtn, UIProgressbar},
   async asyncData({store}:any): Promise<IStore> {
@@ -96,8 +96,7 @@ export default Vue.extend({
      this.pageItem+=9
    },
     search: function (test: string):void{
-      const reg = new RegExp(test.toLowerCase());
-      this.regExp = reg
+      this.regExp = test.toLowerCase()
     },
   },
   data:() : IDate=>({
@@ -107,7 +106,7 @@ export default Vue.extend({
     maxWins:100,
     maxLosses:100,
     regExp:'',
-    flag:true
+    flag:false
   }),
   computed:{
       filteredItems():IFilter {

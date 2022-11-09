@@ -27,9 +27,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import {defineComponent} from "vue";
 import SearchUI from "@/components/UI/SearchUI";
-export default Vue.extend({
+export default defineComponent({
   name: "TheHeader",
   components: {SearchUI},
   data:()=>({

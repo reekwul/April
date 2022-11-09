@@ -49,7 +49,7 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import {defineComponent} from "vue";
 import axios from "axios";
 import UIBtn from "@/components/UI/UIBtn";
 import {IMatch} from '~/types/MatchesState'
@@ -64,7 +64,7 @@ interface IData extends IStore {
   pageItem: number,
 }
 
-export default Vue.extend({
+export default defineComponent({
   name: "_teamID",
   components: {UIBtn},
   async asyncData({params, store}: any): Promise<IStore> {

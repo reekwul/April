@@ -1,10 +1,12 @@
 <template>
   <div class="card">
     <div class="command">
-      <img class="command-img"
-           :src="item['logo_url']"
-           alt=""
-      >
+      <div class="img-block">
+        <img class="command-img"
+             :src="item['logo_url']"
+             alt=""
+        >
+      </div>
       <div class="command-block">
         <h3 class="command-name"
         >{{ item['name'] }}
@@ -40,9 +42,9 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import {defineComponent} from "vue";
 import UIProgressbar from "~/components/UI/UIProgressbar.vue";
-export default Vue.extend({
+export default defineComponent({
   name: "CommandTile",
   components:{UIProgressbar},
   props: {
@@ -73,7 +75,7 @@ export default Vue.extend({
     // dataFilter() функционал должен быть
     // вынесен в отдельный фаил
 
-    dataFilter(value) {
+    dataFilter(value:number):string {
       const days = Math.floor(value / 1000 / 60 / 60 / 24)
 
       if (days.toString().match(/[056789]/g) !== null) {
@@ -85,7 +87,7 @@ export default Vue.extend({
       if (days.toString().match(/[234]/g) !== null) {
         return days + ' дня'
       }
-      return days
+      return ''
     }
   },
 })
@@ -98,6 +100,7 @@ export default Vue.extend({
   flex-wrap: wrap;
   box-sizing: border-box;
   max-width: 293px;
+  min-height: 400px;
   margin: $margin;
   padding: $padding-24;
   border: 2px solid $CItem;
@@ -126,5 +129,8 @@ export default Vue.extend({
 }
 .card:hover {
   background: $CItem-Wrapper-hover;
+}
+.img-block{
+  height: 125px;
 }
 </style>

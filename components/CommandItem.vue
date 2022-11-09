@@ -29,7 +29,7 @@
 
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 import UIProgressbar from "@/components/UI/UIProgressbar";
 
@@ -72,7 +72,7 @@ export default defineComponent( {
     // dataFilter() функционал должен быть
     // вынесен в отдельный фаил
 
-    dataFilter(value){
+    dataFilter(value:number):string{
       const days = Math.floor(value / 1000 / 60 / 60 / 24)
 
       if (days.toString().match(/[056789]/g) !== null) {
@@ -84,7 +84,7 @@ export default defineComponent( {
       if (days.toString().match(/[234]/g) !== null) {
         return days + ' дня'
       }
-      return days
+      return ''
     }
   },
 

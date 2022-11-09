@@ -27,8 +27,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import {defineComponent} from "vue";
+
+export default defineComponent({
   name: "MatchesItem",
   data: () => ({
     flag: false
@@ -45,6 +47,7 @@ export default {
     },
     maxItem: {
       type: Number,
+
       default: () => (0)
     },
     matchId: {
@@ -65,17 +68,17 @@ export default {
     }
   },
   filters: {
-    durationRef(value) {
+    durationRef(value:number):string{
       const sec = (value % 60).toString().padStart(2, '0')
       return Math.floor(value / 60) + ':' + sec
     }
   },
   computed: {
-    lastItem() {
+    lastItem():boolean {
       return this.index === this.maxItem
     }
   }
-}
+})
 </script>
 
 <style scoped>
