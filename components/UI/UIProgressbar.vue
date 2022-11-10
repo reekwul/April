@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="wrapper">
-            <label class="value"
+        <div class="progress-bar">
+            <label class="progress-bar__value"
                    :for="id"
             >{{ value | valueFilter }}
             </label>
@@ -42,9 +42,9 @@ export default Vue.extend({
     computed: {
         colorProgress(): string {
             const percentProgress = this.value / (this.maxValue / 100)
-            return percentProgress > 90 ? 'bar Violet' :
-                percentProgress > 60 ? 'bar Lime' :
-                    percentProgress > 30 ? 'bar Yellow' : 'bar Orange'
+            return percentProgress > 90 ? 'bar bar_violet' :
+                percentProgress > 60 ? 'bar bar_lime' :
+                    percentProgress > 30 ? 'bar bar_yellow' : 'bar bar_orange'
 
         }
     },
@@ -56,60 +56,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.wrapper {
-    display: flex;
-    flex-direction: column;
+<style scoped lang="scss">
 
-    color: #E0D8FF;
-
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 19px;
-
-}
-
-.value {
-    margin: 0.156em 0;
-    padding: 0.156em 0;
-
-}
-
-.bar {
-    margin: 0.313em 0;
-    flex: 1;
-    border: 0;
-    height: 4px;
-    width: 128px;
-    border-radius: 100vh;
-    background: #C5C4C4;
-}
-
-.bar::-webkit-progress-bar {
-    height: 4px;
-    border-radius: 100vh;
-    background: #100025;
-}
-
-.Violet::-webkit-progress-value {
-    border-radius: 100vh;
-    background: #7540F0;
-}
-
-.Lime::-webkit-progress-value {
-    border-radius: 100vh;
-    background: #BBDD00;
-}
-
-.Yellow::-webkit-progress-value {
-    border-radius: 100vh;
-    background: #EECD00;
-}
-
-.Orange::-webkit-progress-value {
-    border-radius: 100vh;
-    background: #FA7000;
-}
 
 </style>

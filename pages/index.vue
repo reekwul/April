@@ -1,12 +1,12 @@
 <template>
     <div class="wrapper">
         <div class="content">
-            <h1 class="head-name">
+            <h1 class="content__head-name">
                 Список команд
             </h1>
-            <div class="wrapper-manager">
+            <div class="content__manager">
                 <CheckboxUI @change="Change"/>
-                <SearchUI class="search" @searching="search"/>
+                <SearchUI class="search-box_right" @searching="search"/>
             </div>
             <CommandTable
                 v-if="flag"
@@ -29,7 +29,7 @@
                     />
                 </nuxt-link>
             </CommandTable>
-            <div class="Tile-Wrapper"
+            <div class="tile-table"
                  v-else>
                 <nuxt-link
                     style="display: inline-block; text-decoration: none; color: inherit;"
@@ -48,7 +48,7 @@
                     />
                 </nuxt-link>
             </div>
-            <div class="btn">
+            <div class="content__btn">
                 <UIBtn
                     v-if="BtnVisibility"
                     @click="addPage"> Загрузить еще
@@ -60,8 +60,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import UIProgressbar from "../components/UI/UIProgressbar";
-import UIBtn from "../components/UI/UIBtn";
+import UIProgressbar from "@/components/UI/UIProgressbar";
+import UIBtn from "@/components/UI/UIBtn";
 import {ITeam} from "~/types/CommandState";
 import SearchUI from "~/components/UI/SearchUI.vue";
 import CheckboxUI from "~/components/UI/CheckboxUI.vue";
@@ -139,29 +139,5 @@ export default Vue.extend({
 })
 </script>
 <style scoped>
-.search {
-    justify-content: flex-end;
-}
 
-.Tile-Wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-    margin: 1.5rem 0;
-    border-radius: 0.75em;
-    max-width: 1024px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1em;
-    line-height: 1.25em;
-    color: #ffffff;
-}
-
-.wrapper-manager {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 </style>

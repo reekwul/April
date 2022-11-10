@@ -1,9 +1,12 @@
 <template>
     <div class="footer">
-        <p class="footer-text">
-            2022© OpenDota
-        </p>
-        <div class="footer-right">
+        <div class="footer__left">
+            <p class="footer-text">
+                2022© OpenDota
+            </p>
+        </div>
+
+        <div class="footer__right">
             <p class="footer-text">О нас</p>
             <p class="footer-text">Политика конфидициальности</p>
             <p class="footer-text">Документация API</p>
@@ -19,32 +22,6 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.footer {
+<style scoped lang="scss">
 
-    display: flex;
-    justify-content: space-between;
-    background: rgba(16, 0, 37, 0.25);
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 19px;
-
-
-}
-
-.footer-right {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-text {
-    margin: 12px;
-    padding: 12px;
-
-    color: #E0D8FF;
-    font-size: 19px;
-}
 </style>

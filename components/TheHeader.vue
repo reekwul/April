@@ -1,6 +1,6 @@
 <template>
-    <div class="Header-Wrapper">
-        <div class="menu"
+    <div class="header">
+        <div class="header__menu"
              @mouseover="()=>this.color = '#bbdd00'"
              @mouseout="()=>this.color = '#ffffff'"
         >
@@ -16,7 +16,7 @@
                     :fill="color"/>
             </svg>
         </div>
-        <div class="logo">
+        <div class="header__logo">
             <svg width="190" height="32" viewBox="0 0 190 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1801_1623)">
                     <path
@@ -59,47 +59,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.Header-Wrapper {
-    display: flex;
-    padding: $padding;
-}
-
-.left {
-    display: flex;
-    align-items: center;
-}
-
-.right {
-    display: flex;
-    align-items: center;
-    margin-right: 1.5em;
-}
-
-.menu {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: $margin-4;
-    margin: $padding-4;
-}
-
-.logo {
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: $padding-4;
-    margin: $margin-4;
-
-    transition: opacity $TAnimation ease;
-}
-
-.logo:hover {
-    opacity: 0.7;
-}
-
 path {
     transition: fill $TAnimation ease;
 }

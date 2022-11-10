@@ -1,43 +1,42 @@
 <template>
-    <div class="card">
+    <div class="tile-table__card">
         <div class="command">
-            <div class="img-block">
-                <img class="command-img"
+            <div class="command-img">
+                <img class="command-img__img"
                      :src="item['logo_url']"
                      alt=""
                 >
             </div>
-            <div class="command-block">
-                <h3 class="command-name"
+            <div class="command-text">
+                <h3 class="command-text__name"
                 >{{ item['name'] }}
                 </h3>
-                <h4 class="command-last"
+                <h4 class="command-text__last-game"
                 >{{ item['last_match_time'] | dataFilter }} назад
                 </h4>
             </div>
         </div>
         <div class="progress">
-            <div class="progress-item">
+            <div class="progress__item">
                 <p>Рейтинг</p>
                 <UIProgressbar
                     :max-value="maxParams.rating"
                     :value="item['rating']"
                 />
             </div>
-            <div class="progress-item">
+            <div class="progress__item">
                 <p>Победы</p>
                 <UIProgressbar
                     :max-value="maxParams.wins"
                     :value="item['wins']"/>
             </div>
-            <div class="progress-item">
+            <div class="progress__item">
                 <p>Поражени</p>
                 <UIProgressbar
                     :max-value="maxParams.losses"
                     :value="item['losses']"/>
             </div>
         </div>
-
     </div>
 </template>
 
@@ -112,50 +111,24 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.card {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    box-sizing: border-box;
-    max-width: 293px;
-    min-height: 400px;
-    margin: $margin;
-    padding: $padding-24;
-    border: 2px solid $CItem;
-}
-
 .command {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.command-block {
-    margin: $margin;
-    padding: $padding;
-}
 
-.command-img {
-    max-height: 125px;
-}
 
 .progress {
     display: flex;
     flex: 1 1;
     flex-direction: column;
+
+    &__item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
-.progress-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.card:hover {
-    background: $CItem-Wrapper-hover;
-}
-
-.img-block {
-    height: 125px;
-}
 </style>

@@ -16,8 +16,6 @@ export default Vue.extend({
 
 <style scoped>
 .Btn {
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;

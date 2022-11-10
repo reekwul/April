@@ -1,10 +1,10 @@
 <template>
-    <div class="Table-Wrapper">
-        <div class="Table-Header">
-            <p class="column">id</p>
-            <p class="column">Длительность</p>
-            <p class="column">Radiant</p>
-            <p class="column">Dire</p>
+    <div class="table-wrapper">
+        <div class="table-header">
+            <p class="table-header__column">id</p>
+            <p class="table-header__column">Длительность</p>
+            <p class="table-header__column">Radiant</p>
+            <p class="table-header__column">Dire</p>
         </div>
         <div>
             <slot></slot>
@@ -20,8 +20,8 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.Table-Header {
+<style scoped lang="scss">
+.table-header {
     grid-template-columns: 2fr 2fr 3fr 3fr;
 }
 </style>

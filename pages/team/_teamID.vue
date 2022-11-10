@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="content">
-            <h1 class="head-name">
+            <h1 class="content__head-name">
                 Матчи команды {{ team.name }}
             </h1>
             <MatchesTable>
@@ -52,7 +52,7 @@
                     />
                 </NuxtLink>
             </MatchesTable>
-            <div class="btn">
+            <div class="content__btn">
                 <UIBtn @click="addPage"
                        v-if="BtnVisibility"
                 > Загрузить еще

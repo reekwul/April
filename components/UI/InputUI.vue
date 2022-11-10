@@ -16,7 +16,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .inp {
     display: flex;
     justify-content: center;
@@ -32,13 +32,13 @@ export default Vue.extend({
     font-weight: 500;
     font-size: 18px;
     line-height: 20px;
+    &::placeholder {
+        color: rgba(224, 216, 255, 0.4);
+    }
+
+    &:focus {
+        outline: none;
+    }
 }
 
-.inp::placeholder {
-    color: rgba(224, 216, 255, 0.4);
-}
-
-.inp:focus {
-    outline: none;
-}
 </style>

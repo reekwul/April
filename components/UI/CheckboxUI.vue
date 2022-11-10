@@ -19,7 +19,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .check {
     appearance: none;
     -webkit-appearance: none;
@@ -28,13 +28,12 @@ export default Vue.extend({
     padding: 20px;
     background: url("/apps_FILL0_wght400_GRAD0_opsz48.svg") center no-repeat;
     transition: 0.3s;
-}
 
-.check:checked {
-    background: url("/menu_FILL0_wght400_GRAD0_opsz48.svg") center no-repeat;
-}
-
-.check:checked:before {
-    background: url("/apps_FILL0_wght400_GRAD0_opsz48.svg") center no-repeat;
+    &:checked {
+        background: url("/menu_FILL0_wght400_GRAD0_opsz48.svg") center no-repeat;
+        &:before {
+            background: url("/apps_FILL0_wght400_GRAD0_opsz48.svg") center no-repeat;
+        }
+    }
 }
 </style>

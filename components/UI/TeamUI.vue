@@ -1,12 +1,14 @@
 <template>
-    <div class="item ">
-    <span class="team">
-      {{ team.name }}
-    </span>
-        <img class="icon"
-             :src="team['logo_url']"
-             alt=""
-        >
+    <div class="command-text">
+        <span class="command-text__name">
+        {{ team.name }}
+        </span>
+        <div class="command-img">
+            <img class="command-img__icon"
+                 :src="team['logo_url']"
+                 alt=""
+            >
+        </div>
     </div>
 </template>
 

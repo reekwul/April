@@ -1,17 +1,19 @@
 <template>
     <div :class='{
-        "Item-Wrapper":true,
-         "Item-Wrapper-2n":flags.flag2N,
-          "lastItem":flags.lastItem}'
+        "item-wrapper":true,
+        "item-wrapper_2n":flags.flag2N,
+        "item-wrapper_last-item":flags.lastItem
+        }'
     >
-        <div class="item ">
+        <div class="item-wrapper__item ">
             {{ matchId }}
         </div>
-        <div class="item ">
+        <div class="item-wrapper__item ">
             {{ duration | durationRef }}
         </div>
 
-        <TeamUI v-for="team in teams"
+        <TeamUI class="item-wrapper__item "
+                v-for="team in teams"
                 :key="Date.now().toString()"
                 :team="team"
         />
@@ -75,12 +77,12 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.Item-Wrapper {
+<style scoped lang="scss">
+.item-wrapper {
     grid-template-columns: 2fr 2fr 3fr 3fr;
-}
 
-.lastItem {
-    border-radius: 0 0 10px 10px;
+    &_last-item {
+         border-radius: 0 0 10px 10px;
+     }
 }
 </style>

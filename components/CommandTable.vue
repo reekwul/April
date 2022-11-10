@@ -1,16 +1,16 @@
 <template>
-    <div class="Table-Wrapper">
-        <div class="Table-Header">
-            <p class="column">Название команды</p>
-            <p class="column">рейтинг</p>
-            <p class="column">Победы</p>
-            <p class="column">Проигрыши</p>
+    <div class="table-wrapper">
+        <div class="table-header">
+            <p class="table-header__column">Название команды</p>
+            <p class="table-header__column">рейтинг</p>
+            <p class="table-header__column">Победы</p>
+            <p class="table-header__column">Проигрыши</p>
         </div>
         <div>
             <slot></slot>
         </div>
-        <div class="Table-Footer">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="table-footer">
+            <svg class="table-footer__svg" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_1846_285)">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                           d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18ZM10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z"
@@ -28,10 +28,10 @@
                     </clipPath>
                 </defs>
             </svg>
-            <p>
+            <p class="footer-text">
                 Team Elo Rankings
             </p>
-            <p>
+            <p class="table-footer__text">
                 k=32, init=1000
             </p>
         </div>
@@ -46,39 +46,10 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
-.Table-Header {
+<style scoped lang="scss">
+.table-header {
     grid-template-columns:4.25fr 1.75fr 1.75fr 1.75fr;
 }
 
-.Table-Footer {
-    padding: 10px;
 
-    display: flex;
-    align-items: center;
-
-    border-radius: 0 0 10px 10px;
-    border-top: 1px solid #301070;
-    border-left: 2px solid #301070;
-    border-right: 2px solid #301070;
-    border-bottom: 2px solid #301070;
-
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 19px;
-
-    color: #FFFFFF;
-}
-
-.Table-Footer svg {
-    margin: 5px 2.5px 5px 5px;
-    padding: 5px 2.5px 5px 5px;
-}
-
-.Table-Footer p {
-    margin: 5px 2.5px;
-    padding: 5px 2.5px;
-}
 </style>

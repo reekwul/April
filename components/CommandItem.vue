@@ -1,28 +1,31 @@
 <template>
     <div
-        :class='{"Item-Wrapper":true,"Item-Wrapper-2n":flag}'>
-        <div class="item">
-            <div>
-                <h3 class="team"
+        :class='{"item-wrapper":true,"item-wrapper_2n":flag}'>
+        <div class="item-wrapper__item">
+            <div class="command-text">
+                <h3 class="command-text__name_color"
                 >{{ item['name'] }}
                 </h3>
-                <h4 class="last-match"
+                <h4 class="command-text__last-game"
                 >{{ item['last_match_time'] | dataFilter }} назад
                 </h4>
             </div>
-            <img class="icon"
-                 :src="item['logo_url']"
-                 alt=""
-            >
+            <div class="command-img">
+                <img class="command-img__icon"
+                     :src="item['logo_url']"
+                     alt=""
+                >
+            </div>
+
         </div>
-        <UIProgressbar class="item"
+        <UIProgressbar class="item-wrapper__item"
                        :max-value="maxParams.rating"
                        :value="item['rating']"
         />
-        <UIProgressbar class="item"
+        <UIProgressbar class="item-wrapper__item"
                        :max-value="maxParams.wins"
                        :value="item['wins']"/>
-        <UIProgressbar class="item"
+        <UIProgressbar class="item-wrapper__item"
                        :max-value="maxParams.losses"
                        :value="item['losses']"/>
     </div>
@@ -107,11 +110,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.Item-Wrapper {
+.item-wrapper {
     grid-template-columns:4.25fr 1.75fr 1.75fr 1.75fr;
-}
-
-.team {
-    color: #BBDD00;
 }
 </style>

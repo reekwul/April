@@ -35,9 +35,6 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.search-box {
-    display: flex;
-}
 
 .Btn {
     display: flex;
