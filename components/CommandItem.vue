@@ -33,10 +33,6 @@
 import Vue from 'vue'
 import UIProgressbar from "@/components/UI/UIProgressbar";
 
-interface IData {
-    flag: false
-}
-
 export default Vue.extend({
     name: "CommandItem",
     components: {UIProgressbar},

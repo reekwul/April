@@ -91,7 +91,7 @@ export default Vue.extend({
     filters: {
 
         // dataFilter() функционал должен быть
-        // вынесен в отдельный фаил
+        // зарегистрирован глобально
 
         dataFilter(value: number): string {
             const days = Math.floor(value / 1000 / 60 / 60 / 24)

@@ -32,17 +32,17 @@ export default Vue.extend({
     props: {
         flags: {
             type: Object,
-            default(){
-                return{
-                    flag2N:{
-                        type:Boolean,
-                        default(){
+            default() {
+                return {
+                    flag2N: {
+                        type: Boolean,
+                        default() {
                             return true
                         }
                     },
-                    lastItem:{
-                        type:Boolean,
-                        default(){
+                    lastItem: {
+                        type: Boolean,
+                        default() {
                             return false
                         }
                     },
