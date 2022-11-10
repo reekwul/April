@@ -1,36 +1,37 @@
 <template>
-  <button class="Btn"
-          @click="()=>this.$emit('click')"
-  >
-    <slot></slot>
-  </button>
+    <button class="Btn"
+            @click="()=>this.$emit('click')"
+    >
+        <slot></slot>
+    </button>
 </template>
 
 <script lang="ts">
-import {defineComponent} from "vue";
-export default defineComponent({
-  name: "UIBtn"
+import Vue from "vue";
+
+export default Vue.extend({
+    name: "UIBtn",
 })
 </script>
 
 <style scoped>
-.Btn{
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 20px;
-  background: #FFFFFF;
-  border-radius: 4px;
-  border: 2px solid white;
+.Btn {
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    border: 2px solid white;
 
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
 
-  color: #000000;
+    color: #000000;
 }
 </style>
